@@ -21,7 +21,7 @@ Submit a link to your repository on Canvas (only one submission per team) to sig
 
 ```{r}
 library(classdata)
-str(ames)
+str(ames) #blake
 ```
 
 1. inspect the first few lines of the data set:
