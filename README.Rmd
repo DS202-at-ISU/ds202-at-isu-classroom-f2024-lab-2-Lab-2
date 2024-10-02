@@ -21,3 +21,5 @@ Submit a link to your repository on Canvas (only one submission per team) to sig
 
 ```{r}
 library(classdata)
+str(ames)
+```
