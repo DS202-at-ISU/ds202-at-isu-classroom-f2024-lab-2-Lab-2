@@ -46,8 +46,15 @@ The variable of interest is Sale Price
 
   - follow-up on oddities: see 4
 
+
 range(ames$`Sale Price`, na.rm = TRUE) #Amaya
 hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30) #Amaya
+
+  ```{r}
+  range(ames$`Sale Price`, na.rm = TRUE) #Amaya
+  hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
+   #Amaya
+   ```
 
   
 
