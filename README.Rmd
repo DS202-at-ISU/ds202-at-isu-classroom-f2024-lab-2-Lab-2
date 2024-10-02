@@ -42,8 +42,12 @@ The variable of interest is Sale Price
 3. start the exploration with the main variable:
 
   - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd?
-  - follow-up on oddities: see 4
-  
+  - follow-up on oddities: see 4\
+    The range of the Sale Price is:
+    ```{r}
+    range(ames$`Sale Price`)
+    ```
+
 4. pick a variable that might be related to the main variable.
 
   - what is the range of that variable? plot. describe the pattern.
