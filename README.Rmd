@@ -100,8 +100,7 @@ The variable of interest is Sale Price
 #Simeon
 Sale Date
   - what is the range of that variable? plot. describe the pattern.
-  library(ggplot2)
-  ggplot2()
+
 ```{r}
   range(ames$`Sale Date`) #Simeon
 ```
