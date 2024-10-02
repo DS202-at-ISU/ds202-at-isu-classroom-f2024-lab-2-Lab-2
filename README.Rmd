@@ -97,7 +97,7 @@ The variable of interest is Sale Price
 ```
 
 4. pick a variable that might be related to the main variable.
-
+#Simeon
 ```{r}
   range(ames$`Sale Date`)
   
