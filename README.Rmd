@@ -96,14 +96,22 @@ hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", 
   - follow-up on oddities: see 4
  
 The range of the Sale Price is:
-(Range shown twice) 
+0 - 20500000
+
+(Range code shown twice) 
 ```{r}
 
   range(ames$`Sale Price`, na.rm = TRUE) #Amaya
+  range(ames$`Sale Price`) #blake
+```
+
+Histogram
+
+
+```{r}
   hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
 #Amaya
 ```
-   
 
 
   
@@ -123,10 +131,34 @@ The range of the Sale Price is:
 #Simeon
 
 ```{r}
-  range(ames$`Sale Date`)
+range(ames$`Sale Date`)
   
 ```
+
+  - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+```{r}
+ames$`Sale Date` <- as.Date(ames$`Sale Date`)
+plot(ames$`Sale Date`, ames$`Sale Price`, 
+     main = "Scatter Plot of Sale Date vs. Sale Price", 
+     xlab = "Sale Date", 
+     ylab = "Sale Price", 
+     col = "blue", 
+     pch = 19)
+```
+
+
+4. pick a variable that might be related to the main variable. 
+#Brietta
+
   - what is the range of that variable? plot. describe the pattern.
+  
+```{r}
+  mean(ames$"TotalLivingArea",na.rm = TRUE)
+  range(ames$"TotalLivingArea",na.rm = TRUE)
+```
+
+the range is 0 - 6007
+
 
 
 ```{r}
@@ -145,10 +177,4 @@ Acres
 ggplot(ames, aes(x=Acres))+
   geom_boxplot()
 ```
-The range of acreage is very skewed, with some high  outliers and a large bunch grouped together near 0
 
-```{r}
-ggplot(ames,aes(x=Acres,y=`Sale Price`))+
-  geom_point()
-```
-From the graph it is hard to tell any correlations between Acres and Sale Price, though there is a large bunch of points that lie below 5 acres with a similar price

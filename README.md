@@ -21,16 +21,6 @@ you are done with your submission.
 
 ``` r
 library(classdata) # Simeon
-```
-
-1.  inspect the first few lines of the data set:
-
-what variables are there? of what type are the variables? what does each
-variable mean? what do we expect their data range to be?  
-
-The 16 variables are:
-
-``` r
 str(ames) #blake
 ```
 
@@ -52,8 +42,15 @@ str(ames) #blake
     ##  $ FirePlace            : chr  "Yes" "No" "No" "No" ...
     ##  $ Neighborhood         : Factor w/ 42 levels "(0) None","(13) Apts: Campus",..: 15 40 19 18 6 24 14 40 13 23 ...
 
+1.  inspect the first few lines of the data set:
+
+what variables are there? of what type are the variables? what does each
+variable mean? what do we expect their data range to be?  
+
+The 16 variables are:
+
 ``` r
-colnames(ames)#blake
+colnames(ames)
 ```
 
     ##  [1] "Parcel ID"             "Address"               "Style"                
@@ -64,7 +61,7 @@ colnames(ames)#blake
     ## [16] "Neighborhood"
 
 ``` r
-head(ames)#brietta
+head(ames)
 ```
 
     ##    Parcel ID                       Address             Style
@@ -96,30 +93,9 @@ head(ames)#brietta
     ## 5        No (19) Res: North Ridge Hei
     ## 6       Yes   (37) Res: College Creek
 
-Numerical - 7 Strings/Character - 5 Factor - 3 Date - 1
-
-Parcel ID - Numerical general number given for the listing - range could
-be any number following numerically after the previous one - incremented
-Address - String  
-could be any combination of numbers and letters based on the address
-Style - Factor  
-descriptor for the house - range could be anything descriptive for the
-house or apartment Occupancy - Factor same as above but describes how
-many people and what type of building it is - ex condo Sale Date -
-Date  
-range is any date that the thing was purchased - range is any logical
-date Sale Price - Numerical no range for sale proce Multi Sale - String
-if there was more than one building purchaed - NA or other input
-YearBuilt - Numerical  
-has to be wihtin a range of years that is logical Acres - Numerical any
-number - has to make sense TotalLivingArea (sf) - Numerical same as
-acres Bedrooms - Numerical whole number - also has to be a logical
-number FinishedBsmtArea (sf) - Numerical area of the basement - should
-be around the same as living area LotArea(sf) - Numerical same as
-basement - area of loft - should be around the same area as the living
-area AC - String yes or no for AC FirePlace - String yes or no for
-fireplace Neighborhood - Factor  
-descriptor for describing the area - no range
+``` r
+#brietta
+```
 
 2.  is there a variable of special interest or focus? \# Simeon The
     variable of interest is Sale Price
@@ -128,31 +104,6 @@ descriptor for describing the area - no range
 - what is the range of the variable? draw a histogram for a numeric
   variable or a bar chart, if the variable is categorical. what is the
   general pattern? is there anything odd?
-
-- follow-up on oddities: see 4
-
-range(ames$`Sale Price`, na.rm = TRUE) #Amaya
-hist(ames$`Sale Price`, main = “Histogram of Sale Prices”, xlab = “Sale
-Price”, breaks = 30) \#Amaya
-
-``` r
-range(ames$`Sale Price`, na.rm = TRUE) #Amaya
-```
-
-    ## [1]        0 20500000
-
-``` r
-hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
-```
-
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
-
-``` r
- #Amaya
- # Description:
-# The sale prices range from X to Y. The histogram shows a right-skewed distribution with most homes
-# priced between X and Y. There are some high-value outliers that are worth investigating.
-```
 
 - follow-up on oddities: see 4  
   The range of the Sale Price is:
@@ -163,21 +114,9 @@ hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", 
 
       ## [1]        0 20500000
 
-  ``` r
-  #blake
-  ```
-
-4.  pick a variable that might be related to the main variable. \#Simeon
-    Sale Date
+4.  pick a variable that might be related to the main variable.
 
 - what is the range of that variable? plot. describe the pattern.
-
-``` r
-  range(ames$`Sale Date`) #Simeon
-```
-
-    ## [1] "2017-07-03" "2022-08-31"
-
 - what is the relationship to the main variable? plot a scatterplot,
   boxplot or facetted barcharts (dependening on the types of variables
   involved). Describe overall pattern, does this variable describe any
