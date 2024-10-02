@@ -85,7 +85,11 @@ The variable of interest is Sale Price
   range(ames$`Sale Price`, na.rm = TRUE) #Amaya
   hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
    #Amaya
+   # Description:
+# The sale prices range from X to Y. The histogram shows a right-skewed distribution with most homes
+# priced between X and Y. There are some high-value outliers that are worth investigating.
    ```
+   
 
   
 =======
