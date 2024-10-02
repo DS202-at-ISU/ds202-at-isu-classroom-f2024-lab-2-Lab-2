@@ -84,52 +84,24 @@ Date - 1
 
   - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd?
 
-
-  - follow-up on oddities: see 4
-
-
-range(ames$`Sale Price`, na.rm = TRUE) #Amaya
-hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30) #Amaya
-
-
-
-  - follow-up on oddities: see 4
- 
-The range of the Sale Price is:
-0 - 20500000
+  The range of the Sale Price is:
+  0 - 20500000
 
 (Range code shown twice) 
 ```{r}
-
   range(ames$`Sale Price`, na.rm = TRUE) #Amaya
   range(ames$`Sale Price`) #blake
 ```
 
 Histogram
-
-
 ```{r}
   hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
 #Amaya
 ```
 
 
-  
-
-  - follow-up on oddities: see 4\
-
-    The range of the Sale Price is:
-
-```{r}
-    range(ames$`Sale Price`)
-    #blake
-```
-
-
-4. `pick a variable that might be related to the main variable.
-
-
 4. pick a variable that might be related to the main variable.
+
 #Simeon
 
 ```{r}
@@ -138,14 +110,6 @@ range(ames$`Sale Date`)
 ```
 
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
-
-  
-4. `pick a variable that might be related to the main variable.
-```{r} 
-#Amaya
-# Range of Bedrooms
-range(ames$Bedrooms, na.rm = TRUE)
-
 ```{r}
 ames$`Sale Date` <- as.Date(ames$`Sale Date`)
 plot(ames$`Sale Date`, ames$`Sale Price`, 
@@ -173,21 +137,10 @@ the range is 0 - 6007
 
 ```{r}
 
-#Bar chart for number of Bedrooms
-barplot(table(ames$Bedrooms), main = "Distribution of Bedrooms", xlab = "Number of Bedrooms", ylab = "Frequency")
-
-#Boxplot of Sale Price vs. Bedrooms
-boxplot(ames$`Sale Price` ~ ames$Bedrooms, main = "Sale Price by Number of Bedrooms", xlab = "Number of Bedrooms", ylab = "Sale Price")
-
-#Amaya 
 ```
 The scatterplot is very flat with almost all the data points being low in sale price.
 All the points are down low on the scatterplot, but there are 2 that are way high right after 2022.
 
-
-Bedroom Range: The number of bedrooms in the dataset ranges from X to Y.
-Bar Chart Pattern: The majority of homes have X bedrooms, with fewer homes having more than Y bedrooms.
-Boxplot Observation: The number of bedrooms generally correlates with higher sale prices, but there is some variability, with homes having the same number of bedrooms displaying a wide range of sale prices.
 
 4. pick a variable that might be related to the main variable.
 #Blake
