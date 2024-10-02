@@ -83,16 +83,6 @@ Date - 1
 3. start the exploration with the main variable:
 
   - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd?
-<<<<<<< HEAD
-
-  - follow-up on oddities: see 4
-
-
-range(ames$`Sale Price`, na.rm = TRUE) #Amaya
-hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30) #Amaya
-
-
-
   - follow-up on oddities: see 4
  
 The range of the Sale Price is:
@@ -111,18 +101,6 @@ Histogram
 ```{r}
   hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
 #Amaya
-```
-
-
-  
-
-  - follow-up on oddities: see 4\
-
-    The range of the Sale Price is:
-
-```{r}
-    range(ames$`Sale Price`)
-    #blake
 ```
 
 
@@ -165,7 +143,7 @@ the range is 0 - 6007
 
 ```
 
-4. pick a variable that might be related to the main variable.\    
+4. pick a variable that might be related to the main variable.   
 #Blake
 Acres
 
