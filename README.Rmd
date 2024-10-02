@@ -21,7 +21,6 @@ Submit a link to your repository on Canvas (only one submission per team) to sig
 
 ```{r}
 library(classdata) # Simeon
-str(ames) #blake
 ```
 
 1. inspect the first few lines of the data set:
@@ -31,12 +30,49 @@ what variables are there? of what type are the variables? what does each variabl
 
 The 16 variables are: 
 ```{r}
-colnames(ames)
-head(ames)
-#brietta
+str(ames) #blake
+colnames(ames)#blake
+head(ames)#brietta
 ```
 
+Numerical - 7
+Strings/Character - 5
+Factor - 3
+Date - 1
 
+  Parcel ID - Numerical
+    general number given for the listing - range could be any number following numerically after the previous one - incremented
+  Address - String   
+    could be any combination of numbers and letters based on the address
+  Style - Factor  
+    descriptor for the house - range could be anything descriptive for the house or apartment
+  Occupancy - Factor 
+    same as above but describes how many people and what type of building it is - ex condo
+  Sale Date - Date  
+    range is any date that the thing was purchased - range is any logical date
+  Sale Price - Numerical
+    no range for sale proce
+  Multi Sale -  String
+    if there was more than one building purchaed - NA or other input
+  YearBuilt - Numerical   
+    has to be wihtin a range of years that is logical
+  Acres - Numerical
+    any number - has to make sense 
+  TotalLivingArea (sf) - Numerical
+    same as acres
+  Bedrooms - Numerical
+    whole number - also has to be a logical number
+  FinishedBsmtArea (sf) - Numerical
+    area of the basement - should be around the same as living area
+  LotArea(sf) - Numerical
+    same as basement - area of loft - should be around the same area as the living area
+  AC - String
+    yes or no for AC
+  FirePlace - String 
+    yes or no for fireplace
+  Neighborhood - Factor        
+    descriptor for describing the area - no range
+    
 2. is there a variable of special interest or focus?
 # Simeon
 The variable of interest is Sale Price
@@ -45,8 +81,11 @@ The variable of interest is Sale Price
   - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd?
 <<<<<<< HEAD
   - follow-up on oddities: see 4
-range(ames$`Sale Price`, na.rm = TRUE) #Amaya
-hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30) #Amaya
+  ```{r}
+  range(ames$`Sale Price`, na.rm = TRUE) #Amaya
+  hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
+   #Amaya
+   ```
 
   
 =======
