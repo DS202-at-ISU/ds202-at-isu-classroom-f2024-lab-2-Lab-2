@@ -97,11 +97,10 @@ The range of the Sale Price is:
     #blake
 ```
 
-
 4. pick a variable that might be related to the main variable.
 
 ```{r}
-  range(ames$`Sale Date`) #Simeon
+  range(ames$`Sale Date`)
   
 ```
   - what is the range of that variable? plot. describe the pattern.
