@@ -105,7 +105,18 @@ head(ames)
   variable or a bar chart, if the variable is categorical. what is the
   general pattern? is there anything odd?
 
+<<<<<<< HEAD
 - follow-up on oddities: see 4
+=======
+- follow-up on oddities: see 4  
+  The range of the Sale Price is:
+
+  ``` r
+  range(ames$`Sale Price`)
+  ```
+
+      ## [1]        0 20500000
+>>>>>>> 56a9f654fc5e960f6ef7d4d85c0205476b06be4f
 
 range(ames$`Sale Price`, na.rm = TRUE) #Amaya
 hist(ames$`Sale Price`, main = “Histogram of Sale Prices”, xlab = “Sale
