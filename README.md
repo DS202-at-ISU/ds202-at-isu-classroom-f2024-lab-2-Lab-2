@@ -21,6 +21,7 @@ you are done with your submission.
 
 ``` r
 library(classdata) # Simeon
+<<<<<<< HEAD
 library(ggplot2) # Blake
 ```
 
@@ -32,6 +33,8 @@ variable mean? what do we expect their data range to be?
 The 16 variables are:
 
 ``` r
+=======
+>>>>>>> a5ffb8090be86296a1b0579ce7bbb7549729798d
 str(ames) #blake
 ```
 
@@ -53,8 +56,15 @@ str(ames) #blake
     ##  $ FirePlace            : chr [1:6935] "Yes" "No" "No" "No" ...
     ##  $ Neighborhood         : Factor w/ 42 levels "(0) None","(13) Apts: Campus",..: 15 40 19 18 6 24 14 40 13 23 ...
 
+1.  inspect the first few lines of the data set:
+
+what variables are there? of what type are the variables? what does each
+variable mean? what do we expect their data range to be?  
+
+The 16 variables are:
+
 ``` r
-colnames(ames)#blake
+colnames(ames)
 ```
 
     ##  [1] "Parcel ID"             "Address"               "Style"                
@@ -65,7 +75,7 @@ colnames(ames)#blake
     ## [16] "Neighborhood"
 
 ``` r
-head(ames)#brietta
+head(ames)
 ```
 
     ## # A tibble: 6 × 16
@@ -84,30 +94,9 @@ head(ames)#brietta
 
 \#brietta
 
-Numerical - 7 Strings/Character - 5 Factor - 3 Date - 1
-
-Parcel ID - Numerical general number given for the listing - range could
-be any number following numerically after the previous one - incremented
-Address - String  
-could be any combination of numbers and letters based on the address
-Style - Factor  
-descriptor for the house - range could be anything descriptive for the
-house or apartment Occupancy - Factor same as above but describes how
-many people and what type of building it is - ex condo Sale Date -
-Date  
-range is any date that the thing was purchased - range is any logical
-date Sale Price - Numerical no range for sale proce Multi Sale - String
-if there was more than one building purchaed - NA or other input
-YearBuilt - Numerical  
-has to be wihtin a range of years that is logical Acres - Numerical any
-number - has to make sense TotalLivingArea (sf) - Numerical same as
-acres Bedrooms - Numerical whole number - also has to be a logical
-number FinishedBsmtArea (sf) - Numerical area of the basement - should
-be around the same as living area LotArea(sf) - Numerical same as
-basement - area of loft - should be around the same area as the living
-area AC - String yes or no for AC FirePlace - String yes or no for
-fireplace Neighborhood - Factor  
-descriptor for describing the area - no range
+``` r
+#brietta
+```
 
 2.  is there a variable of special interest or focus? \# Simeon The
     variable of interest is Sale Price
@@ -118,6 +107,7 @@ descriptor for describing the area - no range
   variable or a bar chart, if the variable is categorical. what is the
   general pattern? is there anything odd? \<\<\<\<\<\<\< HEAD
 
+<<<<<<< HEAD
 - follow-up on oddities: see 4
 
 range(ames$`Sale Price`, na.rm = TRUE) #Amaya
@@ -144,6 +134,8 @@ The range of the Sale Price is: (Range shown twice)
 #Amaya
 ```
 
+=======
+>>>>>>> a5ffb8090be86296a1b0579ce7bbb7549729798d
 - follow-up on oddities: see 4  
 
   The range of the Sale Price is:
@@ -152,6 +144,7 @@ The range of the Sale Price is: (Range shown twice)
     range(ames$`Sale Price`)
 ```
 
+<<<<<<< HEAD
     ## [1]        0 20500000
 
 ``` r
@@ -170,6 +163,13 @@ The range of the Sale Price is: (Range shown twice)
 
 - what is the range of that variable? plot. describe the pattern.
 
+=======
+      ## [1]        0 20500000
+
+4.  pick a variable that might be related to the main variable.
+
+- what is the range of that variable? plot. describe the pattern.
+>>>>>>> a5ffb8090be86296a1b0579ce7bbb7549729798d
 - what is the relationship to the main variable? plot a scatterplot,
   boxplot or facetted barcharts (dependening on the types of variables
   involved). Describe overall pattern, does this variable describe any
