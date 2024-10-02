@@ -43,8 +43,12 @@ head(ames)
 
   - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd?
   - follow-up on oddities: see 4
+range(ames$`Sale Price`, na.rm = TRUE) #Amaya
+hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30) #Amaya
+
   
 4. pick a variable that might be related to the main variable.
 
   - what is the range of that variable? plot. describe the pattern.
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+
