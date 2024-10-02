@@ -100,7 +100,7 @@ The variable of interest is Sale Price
     #blake
     ```
 
-4. pick a variable that might be related to the main variable.
+4. `pick a variable that might be related to the main variable.
 #Simeon
 Sale Date
   - what is the range of that variable? plot. describe the pattern.
@@ -109,4 +109,20 @@ Sale Date
   range(ames$`Sale Date`) #Simeon
 ```
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+  
+4. `pick a variable that might be related to the main variable.
+```{r} 
+#Amaya
+# Range of Bedrooms
+range(ames$Bedrooms, na.rm = TRUE)
 
+# Bar chart for number of Bedrooms
+barplot(table(ames$Bedrooms), main = "Distribution of Bedrooms", xlab = "Number of Bedrooms", ylab = "Frequency")
+
+# Boxplot of Sale Price vs. Bedrooms
+boxplot(ames$`Sale Price` ~ ames$Bedrooms, main = "Sale Price by Number of Bedrooms", xlab = "Number of Bedrooms", ylab = "Sale Price")
+#Bedroom Range: The number of bedrooms in the dataset ranges from X to Y.
+#Bar Chart Pattern: The majority of homes have X bedrooms, with fewer homes having more than Y bedrooms.
+#Boxplot Observation: The number of bedrooms generally correlates with higher sale prices, but there is some variability, with homes having the same number of bedrooms displaying a wide range of sale prices.
+#Amaya 
+```
