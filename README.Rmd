@@ -28,6 +28,11 @@ str(ames) #blake
 
 what variables are there? of what type are the variables? what does each variable mean? what do we expect their data range to be?
 
+```{r}
+head(ames)
+#brietta
+```
+
 2. is there a variable of special interest or focus?
 
 3. start the exploration with the main variable:
