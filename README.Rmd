@@ -99,6 +99,16 @@ The variable of interest is Sale Price
 
 4. pick a variable that might be related to the main variable.
 
+<<<<<<< HEAD
+```{r}
+  range(ames$`Sale Date`) #Simeon
+  
+```
+=======
   - what is the range of that variable? plot. describe the pattern.
+>>>>>>> 66eaa49d8454b8345ea79702e0e515fabe89387f
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+```{r}
+
+```
 
