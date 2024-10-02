@@ -96,14 +96,22 @@ hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", 
   - follow-up on oddities: see 4
  
 The range of the Sale Price is:
-(Range shown twice) 
+0 - 20500000
+
+(Range code shown twice) 
 ```{r}
 
   range(ames$`Sale Price`, na.rm = TRUE) #Amaya
+  range(ames$`Sale Price`) #blake
+```
+
+Histogram
+
+
+```{r}
   hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
 #Amaya
 ```
-   
 
 
   
@@ -125,24 +133,45 @@ The range of the Sale Price is:
 #Simeon
 
 ```{r}
-  range(ames$`Sale Date`)
-
-ames$SaleYear <- format(ames$`Sale Date`, "%Y")
-boxplot(ames$`Sale Price` ~ ames$SaleYear, 
-        main = "Boxplot of Sale Price by Year", 
-        xlab = "Year of Sale", 
-        ylab = "Sale Price", 
-        col = "lightblue", las = 2)
+range(ames$`Sale Date`)
   
 ```
 
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+
   
 4. `pick a variable that might be related to the main variable.
 ```{r} 
 #Amaya
 # Range of Bedrooms
 range(ames$Bedrooms, na.rm = TRUE)
+
+```{r}
+ames$`Sale Date` <- as.Date(ames$`Sale Date`)
+plot(ames$`Sale Date`, ames$`Sale Price`, 
+     main = "Scatter Plot of Sale Date vs. Sale Price", 
+     xlab = "Sale Date", 
+     ylab = "Sale Price", 
+     col = "blue", 
+     pch = 19)
+```
+
+
+4. pick a variable that might be related to the main variable. 
+#Brietta
+
+  - what is the range of that variable? plot. describe the pattern.
+  
+```{r}
+  mean(ames$"TotalLivingArea",na.rm = TRUE)
+  range(ames$"TotalLivingArea",na.rm = TRUE)
+```
+
+the range is 0 - 6007
+
+
+  - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+```{r}
 
 #Bar chart for number of Bedrooms
 barplot(table(ames$Bedrooms), main = "Distribution of Bedrooms", xlab = "Number of Bedrooms", ylab = "Frequency")
