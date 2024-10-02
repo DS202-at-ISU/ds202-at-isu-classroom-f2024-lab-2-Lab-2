@@ -21,6 +21,7 @@ Submit a link to your repository on Canvas (only one submission per team) to sig
 
 ```{r}
 library(classdata) # Simeon
+library(ggplot2) # Blake
 ```
 
 1. inspect the first few lines of the data set:
@@ -116,3 +117,12 @@ Sale Date
 ```
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
 
+4. pick a variable that might be related to the main variable.
+#Blake
+Acres
+
+```{r}
+#The range of the acreage is shown in the boxplot that follows:
+ggplot(ames, aes(x=Acres))+
+  geom_boxplot()
+```
