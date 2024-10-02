@@ -21,6 +21,7 @@ Submit a link to your repository on Canvas (only one submission per team) to sig
 
 ```{r}
 library(classdata) # Simeon
+library(ggplot2) # Blake
 ```
 
 1. inspect the first few lines of the data set:
@@ -82,6 +83,16 @@ Date - 1
 3. start the exploration with the main variable:
 
   - what is the range of the variable? draw a histogram for a numeric variable or a bar chart, if the variable is categorical. what is the general pattern? is there anything odd?
+<<<<<<< HEAD
+
+  - follow-up on oddities: see 4
+
+
+range(ames$`Sale Price`, na.rm = TRUE) #Amaya
+hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30) #Amaya
+
+
+
   - follow-up on oddities: see 4
  
 The range of the Sale Price is:
@@ -89,6 +100,7 @@ The range of the Sale Price is:
 
 (Range code shown twice) 
 ```{r}
+
   range(ames$`Sale Price`, na.rm = TRUE) #Amaya
   range(ames$`Sale Price`) #blake
 ```
@@ -100,20 +112,45 @@ Histogram
   hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
 #Amaya
 ```
+<<<<<<< HEAD
+=======
+   
+
+
+  
+
+  - follow-up on oddities: see 4\
+
+    The range of the Sale Price is:
+
+```{r}
+    range(ames$`Sale Price`)
+    #blake
+```
+>>>>>>> 130304ec1006d7f2c8a34d4cdf9f2d7a78691c17
+
 
 4. pick a variable that might be related to the main variable.
 
+#Simeon
+
 ```{r}
-  range(ames$`Sale Date`)
+range(ames$`Sale Date`)
   
 ```
-  - what is the range of that variable? plot. describe the pattern.
 
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
 ```{r}
-
+ames$`Sale Date` <- as.Date(ames$`Sale Date`)
+plot(ames$`Sale Date`, ames$`Sale Price`, 
+     main = "Scatter Plot of Sale Date vs. Sale Price", 
+     xlab = "Sale Date", 
+     ylab = "Sale Price", 
+     col = "blue", 
+     pch = 19)
 ```
 
+<<<<<<< HEAD
 4. pick a variable that might be related to the main variable. 
 #Brietta
 
@@ -132,3 +169,14 @@ the range is 0 - 6007
 
 ```
 
+=======
+4. pick a variable that might be related to the main variable.
+#Blake
+Acres
+
+```{r}
+#The range of the acreage is shown in the boxplot that follows:
+ggplot(ames, aes(x=Acres))+
+  geom_boxplot()
+```
+>>>>>>> 130304ec1006d7f2c8a34d4cdf9f2d7a78691c17
