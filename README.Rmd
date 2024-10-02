@@ -133,7 +133,7 @@ The range of the Sale Price is:
 
 ```
 
-4. pick a variable that might be related to the main variable.
+4. pick a variable that might be related to the main variable.\    
 #Blake
 Acres
 

@@ -21,12 +21,13 @@ you are done with your submission.
 
 ``` r
 library(classdata) # Simeon
+library(ggplot2) # Blake
 ```
 
 1.  inspect the first few lines of the data set:
 
 what variables are there? of what type are the variables? what does each
-variable mean? what do we expect their data range to be?  
+variable mean? what do we expect their data range to be?
 
 The 16 variables are:
 
@@ -34,22 +35,22 @@ The 16 variables are:
 str(ames) #blake
 ```
 
-    ## Classes 'tbl_df', 'tbl' and 'data.frame':    6935 obs. of  16 variables:
-    ##  $ Parcel ID            : chr  "0903202160" "0907428215" "0909428070" "0923203160" ...
-    ##  $ Address              : chr  "1024 RIDGEWOOD AVE, AMES" "4503 TWAIN CIR UNIT 105, AMES" "2030 MCCARTHY RD, AMES" "3404 EMERALD DR, AMES" ...
+    ## tibble [6,935 × 16] (S3: tbl_df/tbl/data.frame)
+    ##  $ Parcel ID            : chr [1:6935] "0903202160" "0907428215" "0909428070" "0923203160" ...
+    ##  $ Address              : chr [1:6935] "1024 RIDGEWOOD AVE, AMES" "4503 TWAIN CIR UNIT 105, AMES" "2030 MCCARTHY RD, AMES" "3404 EMERALD DR, AMES" ...
     ##  $ Style                : Factor w/ 12 levels "1 1/2 Story Brick",..: 2 5 5 5 NA 9 5 5 5 5 ...
     ##  $ Occupancy            : Factor w/ 5 levels "Condominium",..: 2 1 2 3 NA 2 2 1 2 2 ...
-    ##  $ Sale Date            : Date, format: "2022-08-12" "2022-08-04" ...
-    ##  $ Sale Price           : num  181900 127100 0 245000 449664 ...
-    ##  $ Multi Sale           : chr  NA NA NA NA ...
-    ##  $ YearBuilt            : num  1940 2006 1951 1997 NA ...
-    ##  $ Acres                : num  0.109 0.027 0.321 0.103 0.287 0.494 0.172 0.023 0.285 0.172 ...
-    ##  $ TotalLivingArea (sf) : num  1030 771 1456 1289 NA ...
-    ##  $ Bedrooms             : num  2 1 3 4 NA 4 5 1 3 4 ...
-    ##  $ FinishedBsmtArea (sf): num  NA NA 1261 890 NA ...
-    ##  $ LotArea(sf)          : num  4740 1181 14000 4500 12493 ...
-    ##  $ AC                   : chr  "Yes" "Yes" "Yes" "Yes" ...
-    ##  $ FirePlace            : chr  "Yes" "No" "No" "No" ...
+    ##  $ Sale Date            : Date[1:6935], format: "2022-08-12" "2022-08-04" ...
+    ##  $ Sale Price           : num [1:6935] 181900 127100 0 245000 449664 ...
+    ##  $ Multi Sale           : chr [1:6935] NA NA NA NA ...
+    ##  $ YearBuilt            : num [1:6935] 1940 2006 1951 1997 NA ...
+    ##  $ Acres                : num [1:6935] 0.109 0.027 0.321 0.103 0.287 0.494 0.172 0.023 0.285 0.172 ...
+    ##  $ TotalLivingArea (sf) : num [1:6935] 1030 771 1456 1289 NA ...
+    ##  $ Bedrooms             : num [1:6935] 2 1 3 4 NA 4 5 1 3 4 ...
+    ##  $ FinishedBsmtArea (sf): num [1:6935] NA NA 1261 890 NA ...
+    ##  $ LotArea(sf)          : num [1:6935] 4740 1181 14000 4500 12493 ...
+    ##  $ AC                   : chr [1:6935] "Yes" "Yes" "Yes" "Yes" ...
+    ##  $ FirePlace            : chr [1:6935] "Yes" "No" "No" "No" ...
     ##  $ Neighborhood         : Factor w/ 42 levels "(0) None","(13) Apts: Campus",..: 15 40 19 18 6 24 14 40 13 23 ...
 
 ``` r
@@ -67,34 +68,21 @@ colnames(ames)#blake
 head(ames)#brietta
 ```
 
-    ##    Parcel ID                       Address             Style
-    ## 1 0903202160      1024 RIDGEWOOD AVE, AMES 1 1/2 Story Frame
-    ## 2 0907428215 4503 TWAIN CIR UNIT 105, AMES     1 Story Frame
-    ## 3 0909428070        2030 MCCARTHY RD, AMES     1 Story Frame
-    ## 4 0923203160         3404 EMERALD DR, AMES     1 Story Frame
-    ## 5 0520440010       4507 EVEREST  AVE, AMES              <NA>
-    ## 6 0907275030       4512 HEMINGWAY DR, AMES     2 Story Frame
-    ##                        Occupancy  Sale Date Sale Price Multi Sale YearBuilt
-    ## 1 Single-Family / Owner Occupied 2022-08-12     181900       <NA>      1940
-    ## 2                    Condominium 2022-08-04     127100       <NA>      2006
-    ## 3 Single-Family / Owner Occupied 2022-08-15          0       <NA>      1951
-    ## 4                      Townhouse 2022-08-09     245000       <NA>      1997
-    ## 5                           <NA> 2022-08-03     449664       <NA>        NA
-    ## 6 Single-Family / Owner Occupied 2022-08-16     368000       <NA>      1996
-    ##   Acres TotalLivingArea (sf) Bedrooms FinishedBsmtArea (sf) LotArea(sf)  AC
-    ## 1 0.109                 1030        2                    NA        4740 Yes
-    ## 2 0.027                  771        1                    NA        1181 Yes
-    ## 3 0.321                 1456        3                  1261       14000 Yes
-    ## 4 0.103                 1289        4                   890        4500 Yes
-    ## 5 0.287                   NA       NA                    NA       12493  No
-    ## 6 0.494                 2223        4                    NA       21533 Yes
-    ##   FirePlace              Neighborhood
-    ## 1       Yes       (28) Res: Brookside
-    ## 2        No    (55) Res: Dakota Ridge
-    ## 3        No        (32) Res: Crawford
-    ## 4        No        (31) Res: Mitchell
-    ## 5        No (19) Res: North Ridge Hei
-    ## 6       Yes   (37) Res: College Creek
+    ## # A tibble: 6 × 16
+    ##   `Parcel ID` Address      Style Occupancy `Sale Date` `Sale Price` `Multi Sale`
+    ##   <chr>       <chr>        <fct> <fct>     <date>             <dbl> <chr>       
+    ## 1 0903202160  1024 RIDGEW… 1 1/… Single-F… 2022-08-12        181900 <NA>        
+    ## 2 0907428215  4503 TWAIN … 1 St… Condomin… 2022-08-04        127100 <NA>        
+    ## 3 0909428070  2030 MCCART… 1 St… Single-F… 2022-08-15             0 <NA>        
+    ## 4 0923203160  3404 EMERAL… 1 St… Townhouse 2022-08-09        245000 <NA>        
+    ## 5 0520440010  4507 EVERES… <NA>  <NA>      2022-08-03        449664 <NA>        
+    ## 6 0907275030  4512 HEMING… 2 St… Single-F… 2022-08-16        368000 <NA>        
+    ## # ℹ 9 more variables: YearBuilt <dbl>, Acres <dbl>,
+    ## #   `TotalLivingArea (sf)` <dbl>, Bedrooms <dbl>,
+    ## #   `FinishedBsmtArea (sf)` <dbl>, `LotArea(sf)` <dbl>, AC <chr>,
+    ## #   FirePlace <chr>, Neighborhood <fct>
+
+\#brietta
 
 Numerical - 7 Strings/Character - 5 Factor - 3 Date - 1
 
@@ -123,11 +111,12 @@ descriptor for describing the area - no range
 
 2.  is there a variable of special interest or focus? \# Simeon The
     variable of interest is Sale Price
+
 3.  start the exploration with the main variable:
 
 - what is the range of the variable? draw a histogram for a numeric
   variable or a bar chart, if the variable is categorical. what is the
-  general pattern? is there anything odd?
+  general pattern? is there anything odd? \<\<\<\<\<\<\< HEAD
 
 - follow-up on oddities: see 4
 
@@ -135,50 +124,80 @@ range(ames$`Sale Price`, na.rm = TRUE) #Amaya
 hist(ames$`Sale Price`, main = “Histogram of Sale Prices”, xlab = “Sale
 Price”, breaks = 30) \#Amaya
 
+- follow-up on oddities: see 4
+
+The range of the Sale Price is: (Range shown twice)
+
 ``` r
-range(ames$`Sale Price`, na.rm = TRUE) #Amaya
+  range(ames$`Sale Price`, na.rm = TRUE) #Amaya
 ```
 
     ## [1]        0 20500000
 
 ``` r
-hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
+  hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30)
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
- #Amaya
- # Description:
-# The sale prices range from X to Y. The histogram shows a right-skewed distribution with most homes
-# priced between X and Y. There are some high-value outliers that are worth investigating.
+#Amaya
 ```
 
 - follow-up on oddities: see 4  
+
   The range of the Sale Price is:
 
-  ``` r
-  range(ames$`Sale Price`)
-  ```
+``` r
+    range(ames$`Sale Price`)
+```
 
-      ## [1]        0 20500000
-
-  ``` r
-  #blake
-  ```
-
-4.  pick a variable that might be related to the main variable. \#Simeon
-    Sale Date
-
-- what is the range of that variable? plot. describe the pattern.
+    ## [1]        0 20500000
 
 ``` r
-  range(ames$`Sale Date`) #Simeon
+    #blake
+```
+
+4.  pick a variable that might be related to the main variable.
+
+\#Simeon
+
+``` r
+  range(ames$`Sale Date`)
 ```
 
     ## [1] "2017-07-03" "2022-08-31"
+
+- what is the range of that variable? plot. describe the pattern.
 
 - what is the relationship to the main variable? plot a scatterplot,
   boxplot or facetted barcharts (dependening on the types of variables
   involved). Describe overall pattern, does this variable describe any
   oddities discovered in 3? Identify/follow-up on any oddities.
+
+4.  pick a variable that might be related to the main variable. \#Blake
+    Acres
+
+``` r
+#The range of the acreage is shown in the boxplot that follows:
+ggplot(ames, aes(x=Acres))+
+  geom_boxplot()
+```
+
+    ## Warning: Removed 89 rows containing non-finite values (`stat_boxplot()`).
+
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> The range of
+acreage is very skewed, with some high outliers and a large bunch
+grouped together near 0
+
+``` r
+ggplot(ames,aes(x=Acres,y=`Sale Price`))+
+  geom_point()
+```
+
+    ## Warning: Removed 89 rows containing missing values (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> From the
+graph it is hard to tell any correlations between Acres and Sale Price,
+though there is a large bunch of points that lie below 5 acres with a
+similar price
