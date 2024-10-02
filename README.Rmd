@@ -26,13 +26,16 @@ str(ames) #blake
 
 1. inspect the first few lines of the data set:
 
-what variables are there? of what type are the variables? what does each variable mean? what do we expect their data range to be?
+what variables are there? of what type are the variables? what does each variable mean? what do we expect their data range to be?\
 
+
+The 16 variables are: 
 ```{r}
+colnames(ames)
 head(ames)
 #brietta
 ```
-There are 16 variables within the dataset, including 7 numerical categories, 5 
+
 
 2. is there a variable of special interest or focus?
 
