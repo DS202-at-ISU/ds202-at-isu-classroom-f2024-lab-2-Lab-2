@@ -9,6 +9,7 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 # Lab report #2
 ## Blake, Amaya, Brietta, Simeon
 
