@@ -47,6 +47,7 @@ The variable of interest is Sale Price
     The range of the Sale Price is:
     ```{r}
     range(ames$`Sale Price`)
+    #blake
     ```
 
 4. pick a variable that might be related to the main variable.
