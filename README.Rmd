@@ -106,11 +106,7 @@ Histogram
 
 ```{r}
 range(ames$`Sale Date`)
-  
-```
 
-  - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
-```{r}
 ames$`Sale Date` <- as.Date(ames$`Sale Date`)
 plot(ames$`Sale Date`, ames$`Sale Price`, 
      main = "Scatter Plot of Sale Date vs. Sale Price", 
@@ -119,7 +115,8 @@ plot(ames$`Sale Date`, ames$`Sale Price`,
      col = "blue", 
      pch = 19)
 ```
-
+The scatterplot is very flat with almost all the data points being low in sale price.
+All the points are down low on the scatterplot, but there are 2 that are way high right after 2022.
 
 4. pick a variable that might be related to the main variable. 
 #Brietta
