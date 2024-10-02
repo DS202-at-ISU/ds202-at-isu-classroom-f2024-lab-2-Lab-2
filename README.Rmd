@@ -123,20 +123,19 @@ The range of the Sale Price is:
 #Simeon
 
 ```{r}
-  range(ames$`Sale Date`)
-
-ames$SaleYear <- format(ames$`Sale Date`, "%Y")
-boxplot(ames$`Sale Price` ~ ames$SaleYear, 
-        main = "Boxplot of Sale Price by Year", 
-        xlab = "Year of Sale", 
-        ylab = "Sale Price", 
-        col = "lightblue", las = 2)
+range(ames$`Sale Date`)
   
 ```
 
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
 ```{r}
-
+ames$`Sale Date` <- as.Date(ames$`Sale Date`)
+plot(ames$`Sale Date`, ames$`Sale Price`, 
+     main = "Scatter Plot of Sale Date vs. Sale Price", 
+     xlab = "Sale Date", 
+     ylab = "Sale Price", 
+     col = "blue", 
+     pch = 19)
 ```
 
 4. pick a variable that might be related to the main variable.
