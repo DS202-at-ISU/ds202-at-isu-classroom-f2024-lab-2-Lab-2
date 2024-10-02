@@ -38,6 +38,7 @@ head(ames)
 
 
 2. is there a variable of special interest or focus?
+# Simeon
 The variable of interest is Sale Price
 3. start the exploration with the main variable:
 
