@@ -89,7 +89,7 @@ The variable of interest is Sale Price
 #Amaya
 ```
    
-  - follow-up on oddities: see 4\
+  - follow-up on oddities: see 4
     The range of the Sale Price is:
 ```{r}
     range(ames$`Sale Price`)
