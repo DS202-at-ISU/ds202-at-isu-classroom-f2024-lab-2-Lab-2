@@ -90,7 +90,7 @@ The variable of interest is Sale Price
 range(ames$`Sale Price`, na.rm = TRUE) #Amaya
 hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", breaks = 30) #Amaya
 
-  ```{r}
+
 
   - follow-up on oddities: see 4
   
@@ -106,9 +106,7 @@ hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", 
   
 
   - follow-up on oddities: see 4\
-=======
-  - follow-up on oddities: see 4
->>>>>>> 766df0ba2ff5a04d404a853b5d5d5319ea5c1eb2
+
     The range of the Sale Price is:
 ```{r}
     range(ames$`Sale Price`)
@@ -120,13 +118,14 @@ hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", 
 4. pick a variable that might be related to the main variable.
 
 
+
+
 ```{r}
   range(ames$`Sale Date`) #Simeon
   
 ```
-=======
   - what is the range of that variable? plot. describe the pattern.
->>>>>>> 66eaa49d8454b8345ea79702e0e515fabe89387f
+
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
 ```{r}
 
