@@ -9,7 +9,7 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Lab report #1
+# Lab report #2
 ## Blake, Amaya, Brietta, Simeon
 
 Follow the instructions posted at https://ds202-at-isu.github.io/labs.html for the lab assignment. The work is meant to be finished during the lab time, but you have time until Monday evening to polish things.
@@ -39,42 +39,76 @@ head(ames)#brietta
 #brietta 
 
 Numerical - 7
+
 Strings/Character - 5
+
 Factor - 3
+
 Date - 1
 
-  Parcel ID - Numerical
-    general number given for the listing - range could be any number following numerically after the previous one - incremented
-  Address - String   
-    could be any combination of numbers and letters based on the address
-  Style - Factor  
-    descriptor for the house - range could be anything descriptive for the house or apartment
-  Occupancy - Factor 
-    same as above but describes how many people and what type of building it is - ex condo
-  Sale Date - Date  
-    range is any date that the thing was purchased - range is any logical date
-  Sale Price - Numerical
-    no range for sale proce
-  Multi Sale -  String
-    if there was more than one building purchaed - NA or other input
-  YearBuilt - Numerical   
-    has to be wihtin a range of years that is logical
-  Acres - Numerical
-    any number - has to make sense 
-  TotalLivingArea (sf) - Numerical
-    same as acres
-  Bedrooms - Numerical
-    whole number - also has to be a logical number
-  FinishedBsmtArea (sf) - Numerical
-    area of the basement - should be around the same as living area
-  LotArea(sf) - Numerical
-    same as basement - area of loft - should be around the same area as the living area
-  AC - String
-    yes or no for AC
-  FirePlace - String 
-    yes or no for fireplace
-  Neighborhood - Factor        
-    descriptor for describing the area - no range
+- Parcel ID - Numerical
+  
+  general number given for the listing - range could be any number following numerically after the previous one - incremented
+
+- Address - String   
+
+  could be any combination of numbers and letters based on the address
+
+- Style - Factor 
+
+  descriptor for the house - range could be anything descriptive for the house or apartment
+  
+- Occupancy - Factor
+
+  same as above but describes how many people and what type of building it is - ex condo
+
+- Sale Date - Date  
+  
+  range is any date that the thing was purchased - range is any logical date
+  
+- Sale Price - Numerical
+    
+  no range for sale proce
+  
+- Multi Sale -  String
+  
+  if there was more than one building purchaed - NA or other input
+  
+- YearBuilt - Numerical   
+  
+  has to be wihtin a range of years that is logical
+  
+- Acres - Numerical
+  
+  any number - has to make sense 
+
+- TotalLivingArea (sf) - Numerical
+    
+  same as acres
+  
+- Bedrooms - Numerical
+  
+  whole number - also has to be a logical number
+  
+- FinishedBsmtArea (sf) - Numerical
+  
+  area of the basement - should be around the same as living area
+  
+- LotArea(sf) - Numerical
+  
+  same as basement - area of loft - should be around the same area as the living area
+  
+- AC - String
+  
+  yes or no for AC
+  
+- FirePlace - String 
+    
+  yes or no for fireplace
+  
+- Neighborhood - Factor        
+    
+  descriptor for describing the area - no range
     
 2. is there a variable of special interest or focus?
 # Simeon
@@ -103,9 +137,11 @@ Histogram
 #Amaya
 ```
 
+Oddities:
+
+Its odd that there are two bars off in the far right.  They are outliers of sales prices showing that a few houses were sold and bought for a large amount of money compared to the majority of the houses.  Most of the proces are below $500,000 - leaning more towards 100,000 - 200,000 range.  
 
 4. pick a variable that might be related to the main variable.
-
 #Simeon
 
 ```{r}
@@ -114,6 +150,7 @@ range(ames$`Sale Date`)
 ```
 
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+  
 ```{r}
 ames$`Sale Date` <- as.Date(ames$`Sale Date`)
 plot(ames$`Sale Date`, ames$`Sale Price`, 
@@ -131,6 +168,7 @@ plot(ames$`Sale Date`, ames$`Sale Price`,
   - what is the range of that variable? plot. describe the pattern.
   
 Range:
+
 ```{r}
   mean(ames$"TotalLivingArea",na.rm = TRUE)
   range(ames$"TotalLivingArea",na.rm = TRUE)
@@ -139,6 +177,7 @@ Range:
 the range is 0 - 6007
 
 Plot:
+
 ```{r}
 library(ggplot2)
 ```
@@ -146,14 +185,22 @@ library(ggplot2)
 ```{r}
 livingArea = ames$`TotalLivingArea (sf)`
 price = ames$`Sale Price`
-ggplot( aes( x = livingArea, y = price),data = ames)+geom_line()
+ggplot(aes( x = livingArea, y = price),data = ames)+geom_line()
 ```
+
+There is a weird relationship between price and living area.  There are some high priced buildings with low square feet and high square feet buildings at a relatively low price.  One theory is that the high priced areas are a part of a bigger building like a condo or apartment and it could be the price for the whole building and the living area of one of the apartments. 
 
   - what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
-  
-```{r}
 
+```{r}
+ggplot(aes( x = livingArea, y = price),data = ames)+geom_point()
+#other options
+#ggplot(aes( x = livingArea, y = price),data = ames)+geom_boxplot() #no - doesnt work
+#ggplot(aes( x = livingArea, y = price),data = ames)+geom_bar() #no - have x and y
 ```
+This is a better visual of the graph above - the dots are easier to see than the lines that crowd the screen.  I still have the same reasoning as above in terms of the relationships between the variables.
+
+The only description of the oddities in 3 that this would explain is that we can see how many expensive houses there are.  Based on the high concentration of dots lower demonstrating cheaper houses and the low concentration of the dots on the expensive houses.  
 
 4. pick a variable that might be related to the main variable.   
 #Blake
