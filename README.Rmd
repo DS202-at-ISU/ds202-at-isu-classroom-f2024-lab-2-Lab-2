@@ -114,14 +114,13 @@ hist(ames$`Sale Price`, main = "Histogram of Sale Prices", xlab = "Sale Price", 
 ```
 
 
-
 4. pick a variable that might be related to the main variable.
 
 
 
 
 ```{r}
-  range(ames$`Sale Date`) #Simeon
+  range(ames$`Sale Date`)
   
 ```
   - what is the range of that variable? plot. describe the pattern.
